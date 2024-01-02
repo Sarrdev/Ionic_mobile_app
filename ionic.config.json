@@ -1,0 +1,7 @@
+{
+  "name": "SoEasy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
