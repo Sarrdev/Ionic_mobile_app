@@ -1,0 +1,9 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Bon repas</ion-title>
+    <p class="subTitle">Votre réservation a réussi</p>
+  </div>
+  <div *ngIf="qrImage" class="qr-code-container">
+    <img [src]="qrImage" alt="Code QR">
+  </div>
+</ion-content>

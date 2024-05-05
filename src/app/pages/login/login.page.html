@@ -1,0 +1,50 @@
+
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Bienvenu</ion-title>
+    <p class="subTitle">Identifiez vous pour réserver ton ticket</p>
+  </div>
+
+  <form [formGroup]="loginForm">
+    <div class="ion-padding">
+           <!-- Email -->
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="email@domain.com">
+          <ion-icon slot="start" name="mail"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <!-- Affichage de l'erreur pour l'email -->
+      <div *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid">
+        <ion-text color="danger">L'adresse email est obligatoire</ion-text>
+      </div>
+
+      <!-- Mot de passe -->
+      <ion-item>
+        <ion-label position="stacked">Mot de passe</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Mot de passe">
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <!-- Affichage de l'erreur pour le mot de passe -->
+      <div *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid">
+        <ion-text color="danger">Le mot de passe est obligatoire</ion-text>
+      </div>
+        </div>
+
+        <div class="pass">
+          <div class="oublierpass">
+            <a [routerLink]="['/reset-password']" style="color: #ffc33f">mot de passe oublié?</a>
+          </div>
+          <div>
+            <p><a style="color: #ffc33f" [routerLink]="['/signup']">Créer un compte?</a></p>
+          </div>
+        </div>
+        
+    <ion-fab style="background: #ffc33f" vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
+      <ion-fab-button (click)="login()">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Bienvenue</ion-title>
+    <p class="subTitle">Créez votre compte</p>
+  </div>
+
+  <form [formGroup]="regForm" novalidate>
+    <div class="ion-padding">
+
+      <!-- Nom -->
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input formControlName="fullname" type="text" placeholder="Votre nom">
+          <ion-icon slot="start" name="person"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <!-- Affichage de l'erreur pour le nom -->
+      <div *ngIf="regForm.get('fullname').touched && regForm.get('fullname').invalid">
+        <ion-text color="danger">Le nom est obligatoire</ion-text>
+      </div>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="email@domain.com">
+          <ion-icon slot="start" name="mail"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <!-- Affichage de l'erreur pour l'email -->
+      <div *ngIf="regForm.get('email').touched && regForm.get('email').invalid">
+        <ion-text color="danger">L'adresse email est obligatoire</ion-text>
+      </div>
+
+      <!-- Mot de passe -->
+      <ion-item>
+        <ion-label position="stacked">Mot de passe</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Mot de passe">
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <!-- Affichage de l'erreur pour le mot de passe -->
+      <div *ngIf="regForm.get('password').touched && regForm.get('password').invalid">
+        <ion-text color="danger">Le mot de passe est obligatoire</ion-text>
+      </div>
+
+      <!-- Lien vers la page de connexion -->
+      <div class="pass">
+        <p><a style="color: #ffc33f" [routerLink]="['/login']">Se connecter?</a></p>
+      </div>
+
+    </div>
+
+    <!-- Bouton de soumission du formulaire -->
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
+      <ion-fab-button (click)="signUp()">
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+</ion-content>

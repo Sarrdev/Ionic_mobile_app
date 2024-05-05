@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Utilisez ion-back-button pour afficher un bouton de retour -->
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resto UCAD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="img">
+    <p><img src="assets/ugb.jpg" alt=""></p>
+  </div>
+  <div class="slct">
+    <div class="slct_one">
+      <ion-select label="Selectionner votre repas" label-placement="floating" fill="outline" [(ngModel)]="selectRepas">
+        <ion-select-option value="Petit Déjeuner">Petit Déjeuner</ion-select-option>
+        <ion-select-option value="Déjeuner">Déjeuner</ion-select-option>
+        <ion-select-option value="Diner">Diner</ion-select-option>
+      </ion-select>
+    </div>
+    <div class="slct_two">
+      <ion-select label="Nombre de personne" label-placement="floating" fill="outline" [(ngModel)]="selectNombrePersonne">
+        <ion-select-option value="Moi unique">Moi unique</ion-select-option>
+        <ion-select-option value="deux">Deux</ion-select-option>
+        <ion-select-option value="trois">Trois</ion-select-option>
+      </ion-select>
+    </div>
+    <div class="slct_three">
+      <ion-select label="Payement" label-placement="floating" fill="outline" [(ngModel)]="selectPayment">
+        <ion-select-option value="WAVE">WAVE</ion-select-option>
+        <ion-select-option value="Orange Money">Orange Money</ion-select-option>
+        <ion-select-option value="Kpay">Kpay</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+  <div class="btn">
+    <ion-button expand="block" (click)="reserver()">Réserver</ion-button>
+  </div>
+</ion-content>

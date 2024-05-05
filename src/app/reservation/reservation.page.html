@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Utilisez ion-back-button pour afficher un bouton de retour -->
+      <ion-back-button defaultHref="/ucad"></ion-back-button>
+    </ion-buttons>
+    <ion-title>reservation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="select">
+    <div class="selected-items">
+      <p>Sélection du repas : {{ selectRepas }}</p>
+      <p>Nombre de personnes : {{ selectNombrePersonne }}</p>
+      <p>Moyen de paiement : {{ selectPayment }}</p>
+      <p class="btn"><ion-button (click)="redirect()">Mon code</ion-button></p>
+    </div>
+  </div>
+</ion-content>

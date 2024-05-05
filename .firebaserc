@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "easy-ticket-b529c": {
+      "hosting": {
+        "app": [
+          "easy-ticket-b529c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "easy-ticket-b529c"
+  }
+}
